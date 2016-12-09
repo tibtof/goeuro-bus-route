@@ -1,5 +1,7 @@
 package com.rinftech.demo.bus.route
 
+import com.rinftech.demo.bus.route.model.DirectRouteDto
+import com.rinftech.demo.bus.route.model.Route
 import spock.lang.Specification
 import spock.lang.Subject
 

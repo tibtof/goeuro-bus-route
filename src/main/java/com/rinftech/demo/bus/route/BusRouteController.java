@@ -1,5 +1,6 @@
 package com.rinftech.demo.bus.route;
 
+import com.rinftech.demo.bus.route.model.DirectRouteDto;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

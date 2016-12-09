@@ -1,4 +1,4 @@
-package com.rinftech.demo.bus.route;
+package com.rinftech.demo.bus.route.model;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
