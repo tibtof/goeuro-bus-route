@@ -1,5 +1,6 @@
 package com.rinftech.demo.bus.route.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -11,8 +12,13 @@ import lombok.RequiredArgsConstructor;
 @Getter
 public class DirectRouteDto {
 
-    private final Integer departureSid;
-    private final Integer arrivalSid;
-    private final Boolean hasDirectRoute;
+	@JsonProperty("dep_sid")
+	private final Integer departureSid;
+
+	@JsonProperty("arr_sid")
+	private final Integer arrivalSid;
+
+	@JsonProperty("direct_bus_route")
+	private final Boolean hasDirectRoute;
 
 }

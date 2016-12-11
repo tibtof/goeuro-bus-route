@@ -4,11 +4,13 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.SetMultimap;
 import com.google.common.collect.Sets;
 import com.rinftech.demo.bus.route.model.Route;
+import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+@Repository
 public class InMemoryBusRouteRepository implements BusRouteRepository {
 
 	private final Map<Integer, Route> routes = new HashMap<>();

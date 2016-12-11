@@ -4,6 +4,9 @@ version '1.0-SNAPSHOT'
 apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: 'jacoco'
+apply plugin: 'application'
+
+mainClassName = "com.rinftech.demo.bus.route.Application"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -13,11 +16,31 @@ repositories {
 }
 
 dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:1.4.2.RELEASE")
     compile group: 'com.google.guava', name: 'guava', version: '20.0'
 
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.16.12'
 
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.4.2.RELEASE'
     testCompile group: 'junit', name: 'junit', version: "$junitVersion"
     testCompile group: 'org.codehaus.groovy', name: 'groovy', version: "$groovyVersion"
     testCompile group: 'org.spockframework', name: 'spock-core', version: "$spockFrameworkVersion"
+    testCompile group: 'org.spockframework', name: 'spock-spring', version: '1.0-groovy-2.4'
 }
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination "${buildDir}/jacocoHtml"
+    }
+}
+
+run {
+    if (System.getProperty("store")) {
+        args System.getProperty("store")
+    }
+    standardInput = System.in
+}
+
+defaultTasks 'run'
