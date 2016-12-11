@@ -4,9 +4,7 @@ version '1.0-SNAPSHOT'
 apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: 'jacoco'
-apply plugin: 'application'
-
-mainClassName = "com.rinftech.demo.bus.route.Application"
+apply plugin: 'org.springframework.boot'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -28,6 +26,15 @@ dependencies {
     testCompile group: 'org.spockframework', name: 'spock-spring', version: '1.0-groovy-2.4'
 }
 
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.2.RELEASE")
+    }
+}
+
 jacocoTestReport {
     reports {
         xml.enabled false
@@ -36,11 +43,8 @@ jacocoTestReport {
     }
 }
 
-run {
-    if (System.getProperty("store")) {
-        args System.getProperty("store")
-    }
-    standardInput = System.in
+bootRun {
+    systemProperties = System.properties
 }
 
 defaultTasks 'run'

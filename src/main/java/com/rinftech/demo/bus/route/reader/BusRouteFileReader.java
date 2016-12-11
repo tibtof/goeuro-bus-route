@@ -4,6 +4,7 @@ import com.rinftech.demo.bus.route.BusRouteRepository;
 import com.rinftech.demo.bus.route.model.Route;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
+import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.nio.file.Files;
@@ -13,6 +14,7 @@ import java.util.stream.Collector;
 
 import static java.util.Arrays.*;
 
+@Component
 @RequiredArgsConstructor
 public class BusRouteFileReader {
 
