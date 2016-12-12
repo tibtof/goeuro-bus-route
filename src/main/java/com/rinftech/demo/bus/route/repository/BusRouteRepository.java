@@ -1,4 +1,4 @@
-package com.rinftech.demo.bus.route;
+package com.rinftech.demo.bus.route.repository;
 
 import com.rinftech.demo.bus.route.model.Route;
 

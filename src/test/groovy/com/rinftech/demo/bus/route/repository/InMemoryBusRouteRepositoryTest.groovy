@@ -1,6 +1,7 @@
-package com.rinftech.demo.bus.route
+package com.rinftech.demo.bus.route.repository
 
 import com.rinftech.demo.bus.route.model.Route
+import com.rinftech.demo.bus.route.repository.InMemoryBusRouteRepository
 import spock.lang.Specification
 import spock.lang.Subject
 

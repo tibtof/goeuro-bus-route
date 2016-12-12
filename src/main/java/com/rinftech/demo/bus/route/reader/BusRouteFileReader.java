@@ -1,6 +1,6 @@
 package com.rinftech.demo.bus.route.reader;
 
-import com.rinftech.demo.bus.route.BusRouteRepository;
+import com.rinftech.demo.bus.route.repository.BusRouteRepository;
 import com.rinftech.demo.bus.route.model.Route;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;

@@ -1,4 +1,4 @@
-package com.rinftech.demo.bus.route;
+package com.rinftech.demo.bus.route.repository;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.SetMultimap;
@@ -7,20 +7,17 @@ import com.rinftech.demo.bus.route.model.Route;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+
+import static com.google.common.collect.Multimaps.synchronizedSetMultimap;
 
 @Repository
 public class InMemoryBusRouteRepository implements BusRouteRepository {
 
-	private final Map<Integer, Route> routes = new HashMap<>();
-
-	private final SetMultimap<Integer, Route> indexByStation = HashMultimap.create();
+	private final SetMultimap<Integer, Route> indexByStation = synchronizedSetMultimap(HashMultimap.create());
 
 	@Override
 	public Route save(Route route) {
-		routes.put(route.getId(), index(route));
-		return route;
+		return index(route);
 	}
 
 	private Route index(Route route) {

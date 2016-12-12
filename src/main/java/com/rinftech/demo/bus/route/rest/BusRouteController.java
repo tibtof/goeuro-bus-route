@@ -1,6 +1,7 @@
-package com.rinftech.demo.bus.route;
+package com.rinftech.demo.bus.route.rest;
 
 import com.rinftech.demo.bus.route.model.DirectRouteDto;
+import com.rinftech.demo.bus.route.repository.BusRouteRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,13 +1,11 @@
-package com.rinftech.demo.bus.route
+package com.rinftech.demo.bus.route.reader
 
 import com.rinftech.demo.bus.route.model.Route
-import com.rinftech.demo.bus.route.reader.BusRouteFileReader
-import com.rinftech.demo.bus.route.reader.CorruptedBusRouteFileException
+import com.rinftech.demo.bus.route.repository.BusRouteRepository
 import spock.lang.Specification
 import spock.lang.Subject
 
 import java.nio.file.Paths
-
 
 class BusRouteFileReaderTest extends Specification {
 
@@ -56,6 +54,14 @@ class BusRouteFileReaderTest extends Specification {
 
         then: 'a corrupted file exception is thrown'
         thrown(CorruptedBusRouteFileException)
+    }
+
+    def "no file results in exception"() {
+        when: 'the file does\'n exist'
+        fileBusRouteLoader.load 'non-existent-file.txt'
+
+        then: 'an IOException is thrown'
+        thrown(IOException)
     }
 
     private def load(String fileName) {

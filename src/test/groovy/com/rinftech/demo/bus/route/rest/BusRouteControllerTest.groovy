@@ -1,7 +1,9 @@
-package com.rinftech.demo.bus.route
+package com.rinftech.demo.bus.route.rest
 
 import com.rinftech.demo.bus.route.model.DirectRouteDto
 import com.rinftech.demo.bus.route.model.Route
+import com.rinftech.demo.bus.route.repository.BusRouteRepository
+import com.rinftech.demo.bus.route.rest.BusRouteController
 import spock.lang.Specification
 import spock.lang.Subject
 

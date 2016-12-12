@@ -1,4 +1,4 @@
-package com.rinftech.demo.bus.route;
+package com.rinftech.demo.bus.route.config;
 
 import com.rinftech.demo.bus.route.reader.BusRouteFileReader;
 import lombok.RequiredArgsConstructor;

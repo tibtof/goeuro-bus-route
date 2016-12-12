@@ -1,6 +1,7 @@
 package com.rinftech.demo.bus.route
 
 import com.rinftech.demo.bus.route.model.DirectRouteDto
+import com.rinftech.demo.bus.route.rest.BusRouteController
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.context.embedded.LocalServerPort
 import org.springframework.boot.test.context.SpringBootContextLoader
